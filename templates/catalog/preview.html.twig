@@ -1,0 +1,12 @@
+
+   {% for item in productsList %}
+   <article class="col-4">
+       <figure>
+           <img src="{{item.productImage}}" alt="{{item.productName}}}" class="img-fluid">
+       </figure>
+       <h3 class="a-productName">{{item.productName}}</h3>
+       <span class="a-productMaker">{{item.productMaker}}</span>
+      <p class="a-productDescription">{{item.productDescription}}</p>
+      <a href="{{ path('show_product', {'id' : item.id} ) }}">Voir le produit</a>
+   </article>
+   {% endfor %}

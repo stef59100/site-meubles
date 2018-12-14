@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    
+<div class="container">
+        {% include 'page_accueil/carousel/carousel.html.twig' %}
+        
+        <article class="row">
+            <h1 class="a-title">{{ pageTitle }}</h1>
+            <p class="a-intro">{{ intro }}</p>
+        </article>
+    
+    <section class="row">{% include 'catalog/preview.html.twig' %}</section>
+</div>
+
+{% endblock %}

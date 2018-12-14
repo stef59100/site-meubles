@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<div class="container">    
+{% if productsList|length > 0 %}
+<section class="row"><p>Il y a {{ productsList|length}} produit(s) dans la categorie <em>{{ category_name }}</em></p></section>
+<div class="row">
+{% for item in productsList %}
+   <article class="col-4">
+       <figure>
+           <img src="{{item.productImage}}" alt="{{item.productName}}}" class="img-fluid">
+       </figure>
+       <h3 class="a-productName">{{item.productName}}</h3>
+       <span class="a-productMaker">{{item.productMaker}}</span>
+      <p class="a-productDescription">{{item.productDescription}}</p>
+      <a href="{{ path('show_product', {'id' : item.id} ) }}">Voir le produit</a>
+   </article>
+   {% endfor %}
+</div>
+   {% else %}
+   <section class="col-12"><p>Il ny a pas de produits </p></section>
+   {% endif %}
+</div>
+{% endblock %}

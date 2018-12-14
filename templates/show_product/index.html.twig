@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{store_name}} - {{item.productName}} {% endblock %}
+
+{% block body %}
+<article class="col-12">
+    <figure>
+        <img src="{{item.productImage}}" alt="{{item.productName}}}" class="img-fluid">
+    </figure>
+    <h3 class="a-productName">{{item.productName}}</h3>
+    <span class="a-productMaker">{{item.productMaker}}</span>
+   <p class="a-productDescription">{{item.productDescription}}</p>
+</article>
+{% endblock %}
